@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Edit",
+      "Write",
+      "Read",
+      "Grep",
+      "Glob",
+      "LS",
+      "MultiEdit",
+      "WebFetch",
+      "WebSearch",
+      "Bash(git *)",
+      "Bash(npm *)",
+      "Bash(npx *)",
+      "Bash(node *)",
+      "Bash(mvn *)",
+      "Bash(./mvnw *)",
+      "Bash(jbang *)",
+      "Bash(java *)",
+      "Bash(javac *)",
+      "Bash(ls *)",
+      "Bash(ls)",
+      "Bash(cat *)",
+      "Bash(head *)",
+      "Bash(tail *)",
+      "Bash(find *)",
+      "Bash(echo *)",
+      "Bash(mkdir *)",
+      "Bash(cp *)",
+      "Bash(mv *)",
+      "Bash(touch *)",
+      "Bash(which *)",
+      "Bash(pwd)",
+      "Bash(env)",
+      "Bash(export *)",
+      "Bash(source *)",
+      "Bash(curl *)",
+      "Bash(gh *)"
+    ]
+  },
+  "defaultMode": "acceptEdits"
+}
