@@ -1,0 +1,8 @@
+{
+  "aliases": {
+    "mcp-greeting": {
+      "script-ref": "McpGreetingServer.java",
+      "description": "Runs the MCP Greeting Server via Quarkus + JBang"
+    }
+  }
+}

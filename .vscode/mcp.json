@@ -5,7 +5,7 @@
       "command": "jbang",
       "args": [
         "--quiet",
-        "${workspaceFolder}/McpGreetingServer.java"
+        "mcp-greeting@${workspaceFolder}"
       ]
     }
   }

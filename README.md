@@ -58,6 +58,30 @@ jbang McpGreetingServer.java --greeting "Hi"
 
 JBang downloads all dependencies on the first run and caches them. Subsequent starts are fast.
 
+### JBang wrapper
+
+This repo includes a JBang wrapper (`jbang` / `jbang.cmd` / `jbang.ps1`) so you don't need JBang installed globally:
+
+```bash
+./jbang McpGreetingServer.java
+```
+
+The wrapper bootstraps JBang from `.jbang/jbang.jar` on the first run. This mirrors the Maven wrapper (`mvnw`) pattern and makes the repo self-contained.
+
+### JBang alias
+
+A local `jbang-catalog.json` registers the `mcp-greeting` alias, so you can run the server by name instead of by file path:
+
+```bash
+jbang mcp-greeting@.
+```
+
+Or from any directory:
+
+```bash
+jbang mcp-greeting@/path/to/this/repo
+```
+
 ## Test with MCP Inspector
 
 [MCP Inspector](https://github.com/modelcontextprotocol/inspector) is a browser-based tool for testing MCP servers interactively:
@@ -84,7 +108,7 @@ VS Code with the GitHub Copilot extension supports MCP servers natively. The `.v
     "mcp-greeting-server": {
       "type": "stdio",
       "command": "jbang",
-      "args": ["--quiet", "${workspaceFolder}/McpGreetingServer.java"]
+      "args": ["--quiet", "mcp-greeting@${workspaceFolder}"]
     }
   }
 }

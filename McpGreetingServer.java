@@ -1,8 +1,11 @@
 ///usr/bin/env jbang "$0" "$@" ; exit $?
+
 //JAVA 17+
+
 //DEPS io.quarkus:quarkus-bom:${quarkus.version:3.18.0}@pom
 //DEPS io.quarkiverse.mcp:quarkus-mcp-server-stdio:1.1.0
 //DEPS io.quarkus:quarkus-picocli
+
 //Q:CONFIG quarkus.banner.enabled=false
 // Logs must go to file — stdout/stderr are reserved for MCP JSON-RPC and any extra bytes corrupt the protocol.
 //Q:CONFIG quarkus.log.level=WARN
@@ -13,16 +16,17 @@ import io.quarkiverse.mcp.server.Tool;
 import io.quarkiverse.mcp.server.ToolArg;
 import io.quarkus.runtime.Quarkus;
 import jakarta.enterprise.context.ApplicationScoped;
-import picocli.CommandLine;
+import picocli.CommandLine.Command;
+import picocli.CommandLine.Option;
 
-@CommandLine.Command(
+@Command(
     name = "mcp-greeting-server",
     mixinStandardHelpOptions = true,
     description = "Runs a Quarkus MCP stdio server with greeting tools."
 )
 public class McpGreetingServer implements Runnable {
 
-    @CommandLine.Option(
+    @Option(
         names = "--greeting",
         defaultValue = "Hello",
         description = "Greeting prefix used by MCP greeting tools."
