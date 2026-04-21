@@ -2,6 +2,9 @@
 
 //JAVA 17+
 
+//COMPILE_OPTIONS -encoding UTF-8
+//RUNTIME_OPTIONS -Dfile.encoding=UTF-8 -Dstdout.encoding=UTF-8
+
 //DEPS io.quarkus:quarkus-bom:${quarkus.version:3.18.0}@pom
 //DEPS io.quarkiverse.mcp:quarkus-mcp-server-stdio:1.1.0
 //DEPS io.quarkus:quarkus-picocli
