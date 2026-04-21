@@ -4,6 +4,7 @@
 //DEPS io.quarkiverse.mcp:quarkus-mcp-server-stdio:1.1.0
 //DEPS io.quarkus:quarkus-picocli
 //Q:CONFIG quarkus.banner.enabled=false
+// Logs must go to file — stdout/stderr are reserved for MCP JSON-RPC and any extra bytes corrupt the protocol.
 //Q:CONFIG quarkus.log.level=WARN
 //Q:CONFIG quarkus.log.file.enable=true
 //Q:CONFIG quarkus.log.file.path=mcp-greeting-server.log
@@ -31,6 +32,7 @@ public class McpGreetingServer implements Runnable {
     @Override
     public void run() {
         ServerSettings.setGreetingPrefix(greetingPrefix);
+        // Must block here — returning would exit the process and stop MCP handling.
         Quarkus.waitForExit();
     }
 }
@@ -50,6 +52,7 @@ class GreetingTools {
 }
 
 final class ServerSettings {
+    // volatile ensures the value written by Picocli's thread is visible to CDI bean threads.
     private static volatile String greetingPrefix = "Hello";
 
     private ServerSettings() {

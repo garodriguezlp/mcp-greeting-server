@@ -5,3 +5,7 @@
 .DS_Store
 Thumbs.db
 .vscode/*.code-workspace
+
+# IntelliJ IDEA
+.idea/
+*.iml
