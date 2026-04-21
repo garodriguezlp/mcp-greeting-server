@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "mcp-greeting-server": {
+      "type": "stdio",
+      "command": "jbang",
+      "args": [
+        "--quiet",
+        "${workspaceFolder}/McpGreetingServer.java"
+      ]
+    }
+  }
+}
